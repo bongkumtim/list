@@ -11,38 +11,37 @@
     </div>
   <% end %>
 
-
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :rating %>
-    <%= f.text_field :rating %>
-  </div>
-
-  <div class="field">
-    <%= f.label :srp %>
-    <%= f.text_field :srp %>
-  </div>
-
-  <div class="field">
-    <%= f.label :commision %>
-    <%= f.text_field :commision %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
-<div class="field">
-    <%= f.file_field :pictures, multiple: true %>
-</div>
-
+        <div class="col-sm-6 col-md-6">
+            <div class="table-responsive">
+              <table class="table">
+                <tbody>
+                    <tr>
+                      <td><%= f.label :title %></td>
+                      <td><%= f.text_field :title %></td>
+                    </tr>
+                    <tr>
+                      <td><%= f.label :description %></td>
+                      <td><%= f.text_area :description %></td>
+                    </tr>
+                    <tr>
+                      <td><%= f.label :rating %></td>
+                      <td><%= f.text_field :rating %></td>
+                    </tr>
+                    <tr>
+                      <td><%= f.label :srp %></td>
+                      <td><%= f.text_field :srp %></td>
+                    </tr>
+                    <tr>
+                      <td><%= f.label :commision %></td>
+                      <td><%= f.text_field :commision %></td>
+                    </tr>
+                      <tr>
+                      <td></td>
+                      <td><%= f.file_field :pictures, multiple: true %></td>
+                    </tr>
+                </tbody>
+              </table>
+              <%= f.submit %>
+            </div>
+        </div>
 <% end %>

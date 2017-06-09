@@ -32,6 +32,9 @@
                     </tr>
                 </tbody>
               </table>
+              <%= link_to 'Edit', edit_business_path(@business) %> |
+              <%= link_to 'Back', businesses_path %> |
+              <%= link_to 'Delete', business_path, method: :delete, data: {confirm: 'Are you sure?'} %>
             </div>
         </div>
     </div>
@@ -39,17 +42,3 @@
 </div>
 
 
-
-
-
-<p>
-  
-  
-</p>
-
-<p>
-  
-</p>
-
-<%= link_to 'Edit', edit_business_path(@business) %> |
-<%= link_to 'Back', businesses_path %>
