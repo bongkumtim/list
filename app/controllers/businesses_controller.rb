@@ -15,7 +15,7 @@ class BusinessesController < ApplicationController
 
   # GET /businesses/new
   def new
-    @business = Business.new
+    @business = current_user.businesses.build
   end
 
   # GET /businesses/1/edit
@@ -25,7 +25,7 @@ class BusinessesController < ApplicationController
   # POST /businesses
   # POST /businesses.json
   def create
-    @business = Business.new(business_params)
+    @business = current_user.businesses.build(business_params)
 
     respond_to do |format|
       if @business.save
@@ -70,6 +70,6 @@ class BusinessesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def business_params
-      params.require(:business).permit(:title, :description, :rating, :srp, :commision)
+      params.require(:business).permit(:title, :description, :rating, :srp, :commision, {pictures: []})
     end
 end
