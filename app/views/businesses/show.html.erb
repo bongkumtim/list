@@ -1,34 +1,54 @@
 <p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-sm-6 col-md-6">
+        <% @business.pictures.each do |pic| %>
+          <%= image_tag pic.medium.url %>
+        <% end %></div>
+        <div class="col-sm-6 col-md-6">
+            <div class="table-responsive">
+              <table class="table">
+                <tbody>
+                    <tr>
+                      <td><strong>Title:</strong></td>
+                      <td><%= @business.title %></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Description:</strong></td>
+                      <td><%= @business.description %></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Rating:</strong></td>
+                      <td><%= @business.rating %></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Srp:</strong></td>
+                      <td><%= @business.srp %></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Commision:</strong></td>
+                      <td><%= @business.commision %></td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 
 <p>
-<% @business.pictures.each do |pic| %>
-    <%= image_tag pic.medium.url %>
-<% end %>
+  
+  
 </p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @business.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @business.description %>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @business.rating %>
-</p>
-
-<p>
-  <strong>Srp:</strong>
-  <%= @business.srp %>
-</p>
-
-<p>
-  <strong>Commision:</strong>
-  <%= @business.commision %>
+  
 </p>
 
 <%= link_to 'Edit', edit_business_path(@business) %> |

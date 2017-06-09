@@ -1,34 +1,17 @@
-<h1>Businesses</h1>
-<h3>Welcome <%= current_user.email %></h3>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Rating</th>
-      <th>Srp</th>
-      <th>Commision</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <br>
-  <tbody>
-    <% @businesses.each do |business| %>
-      <tr>
-        <td><%= image_tag(business.pictures.first.medium)%></td>
-        <td><%= business.title %></td>
-        <td><%= business.description %></td>
-        <td><%= business.rating %></td>
-        <td><%= business.srp %></td>
-        <td><%= business.commision %></td>
-        <td><%= link_to 'Show', business %></td>
-        <td><%= link_to 'Edit', edit_business_path(business) %></td>
-        <td><%= link_to 'Destroy', business, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Business', new_business_path %>
+<% if !user_signed_in? %>
+  <div class="jumbotron">
+    <h1> Search Nearby For Services </h1>
+    <p> Within 5km, there is a lot of business communities around you! Go make some some friends! </p>
+    <p><%= link_to "Sign up to enjoy limitless benefit", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+    
+<% end %>
+  </div>
+<div class="row">
+  <% @businesses.each do |business| %>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <%= link_to image_tag(business.pictures.first.medium),business %>
+      </div>
+    </div>
+  <% end %>
+</div>
