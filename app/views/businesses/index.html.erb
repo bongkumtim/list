@@ -1,12 +1,4 @@
-<% if !user_signed_in? %>
-  <div class="jumbotron">
-    <h1> Search Nearby For Services </h1>
-    <p> Within 5km, there is a lot of business communities around you! Go make some some friends! </p>
-    <p><%= link_to "Sign up to enjoy limitless benefit", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
-    
-<% end %>
-  </div>
-  
+<% if user_signed_in? && current_user.merchant? %>
 <div class="row">
   <% @businesses.each do |business| %>
    
@@ -18,3 +10,12 @@
     </div>
   <% end %>
 </div>
+<% else %>
+  <div class="jumbotron">
+    <h1> Search Nearby For Services </h1>
+    <p> Within 5km, there is a lot of business communities around you! Go make some some friends! </p>
+    <p><%= link_to "Sign up to enjoy limitless benefit", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+    
+<% end %>
+
+  </div>
