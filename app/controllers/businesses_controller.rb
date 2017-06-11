@@ -1,4 +1,5 @@
 class BusinessesController < ApplicationController
+  load_and_authorize_resource
   before_action :set_business, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
@@ -6,6 +7,7 @@ class BusinessesController < ApplicationController
   # GET /businesses.json
   def index
     @businesses = Business.all.order("created_at DESC")
+    @merchants = User.where(merchant: 'true').to_a
   end
 
   # GET /businesses/1
