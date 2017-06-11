@@ -1,7 +1,29 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container">
+  <div style="background-color:#FFFFFF;">
+    <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+   <div class="field">
+    <%= f.label :company_name %> |Fill in this if you register as a merchant<br />
+    <%= f.text_field :company_name, autofocus: true %>
+  </div>
+
+   <div class="field">
+    <%= f.label :company_registration %> |Enter the number here<br />
+    <%= f.text_field :company_registration, autofocus: true %>
+  </div>
+
+   <div class="field">
+    <%= f.label :phone_no %> |Enter phone no here<br />
+    <%= f.text_field :phone_no, autofocus: true %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -31,6 +53,9 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
+ <%= f.file_field :pictures, multiple: true %>
+  
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
@@ -41,3 +66,5 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+  </div>
+</div>

@@ -3,6 +3,26 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
+   <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+   <div class="field">
+    <%= f.label :company_name %> |Fill in this if you register as a merchant<br />
+    <%= f.text_field :company_name, autofocus: true %>
+  </div>
+
+   <div class="field">
+    <%= f.label :company_registration %> |Enter the number here<br />
+    <%= f.text_field :company_registration, autofocus: true %>
+  </div>
+
+   <div class="field">
+    <%= f.label :phone_no %> |Enter phone no here<br />
+    <%= f.text_field :phone_no, autofocus: true %>
+  </div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -20,6 +40,9 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+
+  <%= f.file_field :pictures, multiple: true %>
+ 
 
   <div class="actions">
     <%= f.submit "Sign up" %>
