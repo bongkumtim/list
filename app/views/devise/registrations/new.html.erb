@@ -25,8 +25,19 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.text_field :email, autofocus: true %>
   </div>
+
+  <div class="field">
+    <%= f.label :business_offer %>|For example, Tailor Services or Nanny Services<br /> 
+    <%= f.text_field :business_offer, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :business_description %> |For example, RM 50 an hour of services<br />
+    <%= f.email_field :business_description, autofocus: true %>
+  </div>
+
 
   <div class="field">
     <%= f.label :password %>

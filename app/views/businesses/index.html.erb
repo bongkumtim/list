@@ -12,13 +12,21 @@
 </div>
 <% else %>
   <div class="jumbotron">
+   
     <h1> Search Nearby For Services </h1>
     <p> Within 5km, there is a lot of business communities around you! Go make some some friends! </p>
     <p><%= link_to "Search Now!", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
-    
-    <% @merchants.each do |merchant| %>
-    <%= merchant.email %>
-    <% end %>
-<% end %>
-
   </div>
+<div class="row">
+  <% @merchants.each do |merchant| %>
+      <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+      <p><%= image_tag(merchant.pictures.first.medium) %></p> 
+       <h2><strong><%= merchant.name %><h2>
+       <p><%= merchant.business_offer %></p>   
+            
+      </div>
+    </div>  
+<% end %>
+<% end %>
+</dive
