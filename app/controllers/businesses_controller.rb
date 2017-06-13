@@ -1,5 +1,5 @@
 class BusinessesController < ApplicationController
-  load_and_authorize_resource
+  
   before_action :set_business, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
@@ -62,6 +62,13 @@ class BusinessesController < ApplicationController
       format.html { redirect_to businesses_url, notice: 'Business was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def account
+  end
+
+  def merchant
+   
   end
 
   private

@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   root "businesses#index"
 
   get "/account" => "businesses#account"
+  get "/merchant" => "businesses#merchant"
 end

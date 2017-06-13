@@ -66,10 +66,9 @@
 <% @merchants.each do |merchant| %>
       <div class="row">
         <div class="col-lg-4">
-          <%= image_tag(merchant.pictures.first.medium, :size=> '240x240') %>
+          <%= link_to image_tag(merchant.pictures.first.medium, :size=> '240x240'), merchant_path %>
           <h2><%= merchant.name %></h2>
           <p><%= merchant.business_offer %></p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><% end %>
 
 <% end %>
