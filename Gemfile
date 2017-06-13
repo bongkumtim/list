@@ -6,6 +6,9 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'figaro', '~> 1.1', '>= 1.1.1'
+gem 'google-api-client', '~> 0.12.0'
+gem 'fog-google', '~> 0.5.3'
 gem 'cancancan', '~> 2.0'
 gem 'rails_admin', '~> 1.2'
 gem 'remotipart', '~> 1.3', '>= 1.3.1'
