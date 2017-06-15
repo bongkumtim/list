@@ -11,5 +11,6 @@ def configure_permitted_parameters
   devise_parameter_sanitizer.permit(:sign_up, keys: [:business_description,:business_offer,:name,{pictures: []}, :company_name, :company_registration, :phone_no, :email, :password, :password_confirmation]) 
   devise_parameter_sanitizer.permit(:account_update, keys: [:business_description,:business_offer,:name, {pictures: []}, :company_name, :company_registration, :phone_no, :email, :password, :password_confirmation, :current_password])
 end
+
   
 end
