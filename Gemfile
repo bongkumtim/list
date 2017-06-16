@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'geocoder', '~> 1.4', '>= 1.4.4'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'google-api-client', '~> 0.12.0'
 gem 'fog-google', '~> 0.5.3'
